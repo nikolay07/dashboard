@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { checked, unChecked } from "../../../arrows/arrows";
 
 const Flight = ({ flight }) => {
-  console.log(typeof flight);
   return (
     <tr className="flight-string">
       <td className="flight-cell">{flight.airport}</td>

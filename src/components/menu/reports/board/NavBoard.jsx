@@ -33,18 +33,20 @@ function NavBoard() {
       <div className="nav-board__table">
         <table className="">
           <thead className="">
-            {header.map((head, i) => (
-              <th
-                className="nav-board__th"
-                onClick={() => {
-                  sortFlights(state, head.toLowerCase());
-                }}
-                key={i}
-              >
-                {head}
-                {asc ? arrowDown : arrowUp}
-              </th>
-            ))}
+            <tr>
+              {header.map((head, i) => (
+                <th
+                  className="nav-board__th"
+                  onClick={() => {
+                    sortFlights(state, head.toLowerCase());
+                  }}
+                  key={i}
+                >
+                  {head}
+                  {asc ? arrowDown : arrowUp}
+                </th>
+              ))}
+            </tr>
           </thead>
           <tbody>
             <FlightBoard flights={state} />
