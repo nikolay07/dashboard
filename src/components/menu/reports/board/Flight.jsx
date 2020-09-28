@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { checked, unChecked } from "../../../arrows/arrows";
 
 const Flight = ({ flight }) => {
+  console.log(typeof flight);
   return (
     <tr className="flight-string">
       <td className="flight-cell">{flight.airport}</td>
@@ -15,7 +16,7 @@ const Flight = ({ flight }) => {
       <td className="flight-cell">{flight.task}</td>
       <td className="flight-cell">{flight.pass ? checked : unChecked}</td>
       <td className="flight-cell">
-        <Link>{flight.video}</Link>
+        <a>{flight.video}</a>
       </td>
     </tr>
   );
@@ -24,5 +25,8 @@ const Flight = ({ flight }) => {
 export default Flight;
 
 Flight.propTypes = {
-  flight: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  flight: PropTypes.shape(),
+};
+Flight.default = {
+  flight: {},
 };

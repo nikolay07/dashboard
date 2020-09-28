@@ -17,5 +17,8 @@ const FlightBoard = ({ flights }) => {
 export default FlightBoard;
 
 FlightBoard.propTypes = {
-  flight: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  flight: PropTypes.shape(),
+};
+FlightBoard.default = {
+  flight: {},
 };
